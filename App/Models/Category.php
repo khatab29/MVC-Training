@@ -4,6 +4,10 @@ namespace Models;
  
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes; 
+
+
+
+
 class Category extends Model {
     use SoftDeletes;
     protected $table    = "category";
@@ -12,7 +16,7 @@ class Category extends Model {
      
     
     
-    public static function post(){
+    public function posts(){
         
        return $this->hasMany('Models\Post');
     }

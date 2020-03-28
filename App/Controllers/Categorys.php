@@ -7,11 +7,14 @@ class Categorys{
     
        //all categories titles
     public function category(){
-        $all_categorys = category::get(['id','title'] );
+        $all_categorys = category::get(['id','title']);
             return $all_categorys;
     }
     
-    
+     public function post_cate_title($id){
+        $cate = category::where('id', '=', $id)->first();
+          return $cate->title;
+    }
     
     
     
@@ -42,6 +45,15 @@ class Categorys{
        $select_category = category::find($cateID);
         return $select_category;
     }
+    
+    
+    
+    public function post_cate_id($cate_title){
+        $cate_id = category::where('title', '=', $cate_title)->first();
+          return $cate_id->id;
+    }
+    
+    
     
     /*
         //get cate_title based on post_category_id in posts table   

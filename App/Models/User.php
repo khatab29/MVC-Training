@@ -14,7 +14,7 @@ class User extends Model {
     
     
     
-    public static function post(){
+    public function posts(){
         
        return $this->hasMany('Models\Post');
     }

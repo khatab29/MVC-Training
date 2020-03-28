@@ -6,9 +6,9 @@ use Models\Post;
 
 
 
-        //get all posts
+        //get all posts data
     public function get_posts(){
-        $all_posts = post::all();
+        $all_posts = post::get(['id', 'title','category_id', 'user_id', 'image', 'content', 'comment_id', 'created_at']);;
         return $all_posts;
     }
         
@@ -19,6 +19,15 @@ use Models\Post;
             $author = post::find($id);
             return $author->user->username;
     }
+    
+        
+        
+    public function post_category($id){
+            $post_cate_title = post::find($id);
+             return $post_cate_title->category->title;
+    }
+        
+        
         
         
     public function resultCheck($blogsearch){
@@ -36,19 +45,18 @@ use Models\Post;
         
     
 
-/*
-        //upload new post query
-    public function upload_post($post_title, $post_cate, $post_author, $post_status,
-                                $post_image, $post_tags, $post_content, $post_date, $post_comment_count){
 
-        $add_post = post::create(['post_title'=>$post_title, 'post_cate_id'=>$post_cate,
-                                'post_auther'=>$post_author, 'post_status'=>$post_status, 
-                                'post_image'=>$post_image, 'post_tags'=>$post_tags,
-                                'post_content'=>$post_content, 'post_comment_count'=>$post_comment_count,
-                                'post_date'=> $post_date]);
+        //upload new post query
+    public function upload_post($post_cate, $post_title, $post_author, $post_image, $post_content ,$post_comment_count, $post_status, $tags){
+                                   
+
+        $add_post = post::create(['category_id'=>$post_cate,'title'=>$post_title, 'user_id'=>$post_author, 'image'=>$post_image, 
+                                  'content'=>$post_content,'comment_id'=>$post_comment_count,'status'=>$post_status, 'tags'=>$tags]);
+                                  
+                                  
     }
 
-
+/*
 
         //delete post query
     public function delete_post($post_id){

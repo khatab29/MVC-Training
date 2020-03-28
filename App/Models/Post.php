@@ -7,8 +7,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Post extends Model {
      
     protected $table = "post";
-    protected $fillable = ['category_id', 'title', 'user_id', 'image','content', 'tags', 'post_comment_count', 'status'];
+    protected $fillable = ['category_id', 'title', 'user_id', 'image','content', 'tags', 'comment_id', 'status'];
    
+    
+    
+    
+     public function category(){
+        
+        return $this->belongsTo('Models\Category');
+    }
     
     
     
@@ -19,11 +26,7 @@ class Post extends Model {
     
     
     
-    public static function Category(){
-        
-        return $this->belongsTo('Models\category');
-    }
-    
+   
     
     
     

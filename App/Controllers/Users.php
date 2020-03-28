@@ -6,7 +6,11 @@ class Users{
     
     
     
-    
+       //get post user_id
+    public function post_user_id($username){
+        $users = user::where('username', '=', $username)->first();
+          return $users->id;
+    }
     
     
     
@@ -78,12 +82,7 @@ class Users{
         
     }
     
-       //valid users query
-    public function valid_users($username){
-        
-        $users = user::where('user_username', '=', $username)->get();
-          return $users;
-    }
+    
 */
     
     
