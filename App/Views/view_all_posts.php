@@ -36,8 +36,8 @@
                <td><?= $post_Data['comment_id'] ?></td>
                <td><?= $post_Data['created_at'] ?></td>
                    
-               <td><a href = "categories.php?delete=" onClick = "return confirmation();">Delete</a></td>
-               <td><a href = "categories.php?edit=">Edit</a></td>
+               <td><a href = "posts.php?deletePost=<?= $post_Data['id'] ?>" onClick = "return confirmation();">Delete</a></td>
+               <td><a href = "posts.php?editPost=<?= $post_Data['id'] ?>">Edit</a></td>
                </tr>  
 <?php } ?>
                </tbody>

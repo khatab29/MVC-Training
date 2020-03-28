@@ -1,11 +1,19 @@
 <?php 
 include "admin_includes/adm_header.php";
+use Controllers\Posts;
+
+
+
+if(isset($_GET['deletePost'])){
+    $delte_post_id = $_GET['deletePost'];
+    $delete_post = Posts::delete_post($delte_post_id);
+    header("location: posts.php");
+}
+
 include "admin_includes/adm_navigation.php";
 include "admin_includes/adm_sidebar.php";
 include "admin_includes/adm_heading.php";
 
-
-use Controllers\Posts;
 
 
 
@@ -25,9 +33,9 @@ if (isset($_GET['source'])){
 include "../app/views/view_all_posts.php";
                 break;
 
-
-
 }
+
+
 
 
 

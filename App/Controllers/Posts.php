@@ -16,15 +16,15 @@ use Models\Post;
         
         //get post username from user table
     public function post_author($id){
-            $author = post::find($id);
-            return $author->user->username;
+        $author = post::find($id);
+        return $author->user->username;
     }
     
         
-        
+        //get category title from category table
     public function post_category($id){
-            $post_cate_title = post::find($id);
-             return $post_cate_title->category->title;
+        $post_cate_title = post::find($id);
+        return $post_cate_title->category->title;
     }
         
         
@@ -36,7 +36,7 @@ use Models\Post;
     }
 
 
-        // search posts index.php sidebar query
+        // search posts index.php sidebar
     public function searchBlog($blogsearch){
         $search_posts = post::Where('tags', 'like', '%'.$blogsearch.'%')->get();
         return $search_posts;
@@ -56,16 +56,23 @@ use Models\Post;
                                   
     }
 
-/*
+
 
         //delete post query
     public function delete_post($post_id){
-
         $remove_post = post::find($post_id)->delete();
         
     }
+        
+        
+        
+     //display post in post.php
+    public function post($postId){
+        $post = post::where('id' ,$postId)->get();
+        return $post;
+    }
 
-
+/*
 
         //update post query
     public function update_post($edit_post_id, $new_post_title, $new_post_cate, $new_post_author, 
@@ -90,11 +97,7 @@ use Models\Post;
 
 
 
-        //display post in post.php page query
-    public function posts($postId){
-        $post = post::find($postId);
-        return $post;
-    }
+    
 
 
 
