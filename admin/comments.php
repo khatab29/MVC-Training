@@ -1,14 +1,11 @@
 <?php 
 include "admin_includes/adm_header.php";
-use Controllers\Posts;
-
-
-
-if(isset($_GET['deletePost'])){
-    $delte_post_id = $_GET['deletePost'];
-    $delete_post = Posts::delete_post($delte_post_id);
-    header("location: posts.php");
+use Controllers\Comments;
+if(isset($_GET['approve'])){
+    $approved_comment = comments::get_approve_comment($_GET['approve'], "approved");
 }
+
+
 
 include "admin_includes/adm_navigation.php";
 include "admin_includes/adm_sidebar.php";
@@ -29,8 +26,8 @@ if (isset($_GET['source'])){
             break;
             
         default:
-            $posts_Data = Posts::get_posts();
-include "../app/views/view_all_posts.php";
+       $comments_Data = comments::all_comments_data();
+       include "../app/views/view_all_comments.php";
                 break;
 
 }

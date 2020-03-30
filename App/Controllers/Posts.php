@@ -71,6 +71,16 @@ use Models\Post;
         $post = post::where('id' ,$postId)->get();
         return $post;
     }
+        
+        
+        
+        
+        //display post based on categorey_id in index.php page query   
+    public function category_post($post_categoryId){
+          $post_category = post::where('category_id', $post_categoryId)->get();
+          return $post_category;
+    }
+      
 
 /*
 
@@ -101,12 +111,6 @@ use Models\Post;
 
 
 
-        //display post based on categorey in post.php page query   
-    public function post_category($post_categoryId){
-          $post_category = post::where('post_cate_id', '=' , $post_categoryId)->get();
-          return $post_category;
-    }
-      
         
         
         //get post title based on comment_post_id---view_all_comments.php    

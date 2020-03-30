@@ -12,6 +12,19 @@ class Users{
           return $users->id;
     }
     
+    //check if users exists in data base
+    public function valied_users_check($username, $password){
+        $users_check = user::where([['email',$username], ['password',$password]])->exists();
+          return $users_check;
+    }
+    
+    
+    public function valied_user($username, $password){
+        $valied_user = user::where([['email',$username], ['password',$password]])->first();
+          return $valied_user;
+    }
+    
+    
     
     
     

@@ -1,4 +1,8 @@
-<div class="col-md-4">
+
+    
+   
+    
+    
                 <div class="well">
                     <h4>Blog Search</h4>
                     <form action="Posts_search.php" method="post">

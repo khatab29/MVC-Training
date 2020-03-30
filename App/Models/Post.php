@@ -27,6 +27,11 @@ class Post extends Model {
     
     
    
+    public function comment(){
+        
+        return $this->hasMany('Models\Comment');
+    }
+    
     
     
     
