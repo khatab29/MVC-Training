@@ -8,7 +8,7 @@ use Models\Post;
 
         //get all posts data
     public function get_posts(){
-        $all_posts = post::get(['id', 'title','category_id', 'user_id', 'image', 'content', 'comment_id', 'created_at']);;
+        $all_posts = post::get(['id', 'title','category_id', 'user_id', 'image', 'content', 'comment_count', 'created_at']);;
         return $all_posts;
     }
         
@@ -51,7 +51,7 @@ use Models\Post;
                                    
 
         $add_post = post::create(['category_id'=>$post_cate,'title'=>$post_title, 'user_id'=>$post_author, 'image'=>$post_image, 
-                                  'content'=>$post_content,'comment_id'=>$post_comment_count,'status'=>$post_status, 'tags'=>$tags]);
+                                  'content'=>$post_content,'comment_count'=>$post_comment_count,'status'=>$post_status, 'tags'=>$tags]);
                                   
                                   
     }

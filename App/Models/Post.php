@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  
 class Post extends Model {
      
-    protected $table = "post";
-    protected $fillable = ['category_id', 'title', 'user_id', 'image','content', 'tags', 'comment_id', 'status'];
+    protected $table = "posts";
+    protected $fillable = ['category_id', 'title', 'user_id', 'image','content', 'tags', 'comment_count', 'status'];
    
     
     

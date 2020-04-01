@@ -33,7 +33,7 @@
                <td>Draft</td>
                <td><img src = "../images/<?=$post_Data['image']?>" width="100"></td>
                <td><?= $post_Data['content'] ?></td>   
-               <td><?= $post_Data['comment_id'] ?></td>
+               <td><?= $post_Data['comment_count'] ?></td>
                <td><?= $post_Data['created_at'] ?></td>
                    
                <td><a href = "posts.php?deletePost=<?= $post_Data['id'] ?>" onClick = "return confirmation();">Delete</a></td>

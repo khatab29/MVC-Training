@@ -71,11 +71,11 @@ if(isset($_GET['edit'])){
 $cate_id = $_GET['edit'];
  //get category to be edited
 $category = categorys::get_edit_category($cate_id);
-$catetitle = $category['title'];
+
     
     echo "    <div class='form-group'>
                     <label for='cate_title'> Edit Categorey</label>
-                    <input type='text' class='form-control' name='new_cate' value = {$catetitle}>
+                    <input type='text' class='form-control' name='new_cate' value = {$category['title']}>
                     </div>
                     <div class='form-group'>
                     <input class='btn btn-primary' type='submit' name='edit_categorey' value='Update Categorey' onClick = 'return confirming();'>

@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  
 class User extends Model {
      
-    protected $table    = "user";
+    protected $table    = "users";
     protected $fillable = ['username', 'password', 'firstname', 'lastname', 'email', 'image'];
 
     

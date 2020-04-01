@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Comment extends Model {
     use SoftDeletes;
-    protected $table    = "comment";
+    protected $table    = "comments";
     protected $fillable = ['post_id', 'user_id', 'content', 'status'];
   
      

@@ -2,7 +2,7 @@
 
 $db['db_host']       = "localhost";
 $db['db_driver']     = "mysql";
-$db['db_name']       = "my_blog";
+$db['db_name']       = "blog";
 $db['db_username']   = "root";
 $db['db_pass']       = "";
 $db['db_charset']    = "utf8";
