@@ -33,7 +33,7 @@ class Categorys{
     }
     
     
-       //update categories in admin table query
+       //update categories in categories table 
     public function update_category($cateID, $newCategory){
         $select_category = category::find($cateID);
         $select_category->title = $newCategory;
@@ -42,8 +42,8 @@ class Categorys{
     
         //
     public function get_edit_category($cateID){
-       $select_category = category::find($cateID);
-        return $select_category;
+       $select_category = category::where('id', $cateID)->first();
+        return $select_category->title;
     }
     
     

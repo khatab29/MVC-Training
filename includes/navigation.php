@@ -20,7 +20,7 @@
                         <a href="index.php?source=posts_table">Admin Posts Table</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="index.php?source=categories_table">Categories</a>
                     </li>
                 </ul>
             </div>

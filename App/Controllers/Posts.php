@@ -12,7 +12,11 @@ use Models\Post;
         return $all_posts;
     }
         
-        
+        //get approved posts data
+    public function get_approved_posts($status){
+        $approved_posts = post::where('status', $status)->get(['id', 'title','category_id', 'user_id', 'image', 'content', 'comment_count', 'created_at','status']);
+        return $approved_posts;
+      }  
         
         //get post username from user table
     public function post_author($id){
@@ -20,6 +24,12 @@ use Models\Post;
         return $author->user->username;
     }
     
+        //update post status
+    public function approve_post($post_id, $status){
+        $approve = post::find($post_id);
+        $approve->status = $status;
+        $approve->save();
+    }
         
         //get category title from category table
     public function post_category($id){
@@ -82,11 +92,7 @@ use Models\Post;
     }
         
         
-    public function approve_post($post_id, $status){
-        $approve = post::find($post_id);
-        $approve->status = $status;
-        $approve->save();
-    }
+    
       
 
 /*

@@ -24,6 +24,5 @@ by <a href="index.php"><?=$post_Data['author_name']?></a>
 </div>
 <?php
 include "includes/sidebar.php";
-include "includes/widget.php";
 include "includes/footer.php";
 ?>
