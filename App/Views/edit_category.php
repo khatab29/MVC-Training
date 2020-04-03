@@ -12,7 +12,7 @@
 </div>
 <script>
 function edit_confirmation(){
-var x = confirm("Delete this post From Table ? ");
+var x = confirm("edit this category? ");
 if(x == true){
 return true;
 }else{
