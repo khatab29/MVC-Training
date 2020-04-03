@@ -11,7 +11,7 @@ Page Heading
 <a href="#"><?=$post_Data['title']?></a>
 </h2>
 <p class="lead">
-by <a href="index.php"><?=$post_Data['author']?></a>
+by <a href="index.php"><?=$post_Data['author_name']?></a>
 </p>
 <p><span class="glyphicon glyphicon-time"></span> Posted on <?=$post_Data['created_at']?></p>
 <hr>

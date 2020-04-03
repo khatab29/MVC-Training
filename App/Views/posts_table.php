@@ -31,7 +31,7 @@ include "includes/navigation.php";?>
 <td><?= $post_Data['comment_count'] ?></td>
 <td><?= $post_Data['created_at'] ?></td>
 <td><a href = "index.php?source=posts_table&&deletePost=<?= $post_Data['id'] ?>" onClick = "return confirmation();">Delete</a></td>
-<td><a href = "index.php?source=posts_table&&approve=<?= $post_Data['id'] ?>">Approve</a></td>
+<td><a href = "index.php?source=posts_table&&approve=<?= $post_Data['id'] ?>" onClick = "return confirm_approve();">Approve</a></td>
 </tr>  
 <?php endforeach ?>
 </tbody>
@@ -39,12 +39,24 @@ include "includes/navigation.php";?>
 </div>  
 <script>
 function confirmation(){
-var x = confirm("Delete  From Table ? ");
+var x = confirm("Delete this post From Table ? ");
 if(x == true){
 return true;
 }else{
 return false;
 }
 }
+    
+function confirm_approve(){
+var x = confirm("Approve This Post? ");
+if(x == true){
+return true;
+}else{
+return false;
+}
+}
+    
 </script>
+
+
 <?php include "includes/footer.php";?>

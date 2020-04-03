@@ -68,8 +68,8 @@ use Models\Post;
         
      //display post in post.php
     public function post($postId){
-        $post = post::where('id' ,$postId)->get();
-        return $post;
+        $post = post::where('id' ,$postId)->first();
+        return $post->title;
     }
         
         
