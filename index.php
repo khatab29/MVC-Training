@@ -1,9 +1,17 @@
 <?php
-include "start.php"; 
-
-use Controllers\Posts;
-$posts_Data = Posts::get_posts();
-foreach($posts_Data as $post_Data){
-$post_Data['author'] = Posts::post_author($post_Data['id']);
+if(isset($_GET['source'])){
+    $source = $_GET['source'];
+}else{
+    $source = "";
 }
-include "app/views/post_display.php";
+
+    switch ($source) {
+    case "add_post":
+        include "controller/add_post.php";
+        break;
+            
+    
+   
+    default:
+        include "controller/display_all_posts.php";
+}
