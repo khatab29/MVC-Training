@@ -8,7 +8,7 @@ use Models\Post;
 
         //get all posts data
     public function get_posts(){
-        $all_posts = post::get(['id', 'title','category_id', 'user_id', 'image', 'content', 'comment_count', 'created_at']);;
+        $all_posts = post::get(['id', 'title','category_id', 'user_id', 'image', 'content', 'comment_count', 'created_at','status']);;
         return $all_posts;
     }
         
@@ -79,6 +79,13 @@ use Models\Post;
     public function category_post($post_categoryId){
           $post_category = post::where('category_id', $post_categoryId)->get();
           return $post_category;
+    }
+        
+        
+    public function approve_post($post_id, $status){
+        $approve = post::find($post_id);
+        $approve->status = $status;
+        $approve->save();
     }
       
 

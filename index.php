@@ -10,7 +10,9 @@ if(isset($_GET['source'])){
         include "controller/add_post.php";
         break;
             
-    
+    case "posts_table":
+        include "controller/posts_table.php";
+        break;
    
     default:
         include "controller/display_all_posts.php";
