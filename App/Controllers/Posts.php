@@ -16,12 +16,26 @@ use Models\Post;
     public function get_approved_posts($status){
         $approved_posts = post::where('status', $status)->get(['id', 'title','category_id', 'user_id', 'image', 'content', 'comment_count', 'created_at','status']);
         return $approved_posts;
-      }  
+      } 
+        
+        
+        //display post in post.php
+    public function post_info($postId){
+        $post = post::where('id' ,$postId)->first();
+        return $post;
+    }
+        
         
         //get post username from user table
     public function post_author($id){
         $author = post::find($id);
         return $author->user->username;
+    }
+        
+          //get post user_id fr
+        public function post_user_id($id){
+        $user_id = post::find($id);
+        return $user_id->user->id;
     }
     
         //update post status
@@ -76,12 +90,7 @@ use Models\Post;
         
         
         
-     //display post in post.php
-    public function post($postId){
-        $post = post::where('id' ,$postId)->first();
-        return $post->title;
-    }
-        
+     
         
         
         

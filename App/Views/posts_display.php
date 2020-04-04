@@ -8,7 +8,7 @@ Page Heading
 <small>Secondary Text</small>
 </h1>
 <h2>
-<a href="#"><?=$post_Data['title']?></a>
+<a href="index.php?source=post&&post_id=<?=$post_Data['id']?>"><?=$post_Data['title']?></a>
 </h2>
 <p class="lead">
 by <a href="index.php"><?=$post_Data['author_name']?></a>

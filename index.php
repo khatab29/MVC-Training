@@ -15,6 +15,9 @@ break;
 case "categories_table":
 include "controller/categories_table.php";
 break;
+case "post":
+include "controller/post.php";
+break;       
 default:
 include "controller/display_approved_posts.php";
 }

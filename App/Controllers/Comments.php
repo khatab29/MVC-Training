@@ -11,6 +11,17 @@ class Comments{
         
     }
     
+    public function upload_comment($post_id, $post_user_id, $content){
+        $upload_comment = Comment::create(['post_id'=>$post_id, 'user_id'=>$post_user_id, 'content'=>$content]);
+    }
+    
+    
+       //get posts comments
+    public function get_post_comment($post_id){
+        $post_comment = Comment::where('post_id',$post_id )->get();
+        return $post_comment;
+    }
+    
        //get comment username from user table
      public function comment_author($id){
         $author = Comment::find($id);
