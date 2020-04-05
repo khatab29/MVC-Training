@@ -29,4 +29,5 @@ $comment['username'] = Comments::comment_author($comment['id']);
     
 }
 
+
 include "app/views/post.php";

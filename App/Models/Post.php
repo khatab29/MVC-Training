@@ -26,14 +26,18 @@ class Post extends Model {
     
     
     
-   
+     
     public function comment(){
         
         return $this->hasMany('Models\Comment');
     }
     
     
-    
+      //many to many relation with tags table
+     public function tags(){
+        
+       return $this->belongsToMany('Models\tag');
+    }
     
     
     

@@ -12,6 +12,7 @@ include "includes/navigation.php";?>
 <th>Status</th>
 <th>Image</th>
 <th>Content</th>
+<th>Tags</th>
 <th>Comments</th>
 <th>Date</th>
 <th>Delete</th>
@@ -27,7 +28,8 @@ include "includes/navigation.php";?>
 <td><?= $post_Data['category_title'] ?></td>
 <td><?= $post_Data['status'] ?></td>
 <td><img src = "images/<?=$post_Data['image']?>" width="100"></td>
-<td><?= $post_Data['content'] ?></td>   
+<td><?= $post_Data['content'] ?></td>
+<td></td>
 <td><?= $post_Data['comment_count'] ?></td>
 <td><?= $post_Data['created_at'] ?></td>
 <td><a href = "index.php?source=posts_table&&deletePost=<?= $post_Data['id'] ?>" onClick = "return confirmation();">Delete</a></td>

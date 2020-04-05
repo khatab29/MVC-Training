@@ -26,6 +26,15 @@ use Models\Post;
     }
         
         
+        
+    public function post_tags($postId){
+    $post_tags = post::find($postId);
+    
+         return $post_tags->tags;
+    } 
+        
+        
+        
         //get post username from user table
     public function post_author($id){
         $author = post::find($id);
@@ -102,7 +111,7 @@ use Models\Post;
         
         
     
-      
+    
 
 /*
 
