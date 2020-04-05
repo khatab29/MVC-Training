@@ -13,7 +13,7 @@ include "includes/navigation.php";?>
 <th>Image</th>
 <th>Content</th>
 <th>Tags</th>
-<th>Comments</th>
+<th>Comments Count</th>
 <th>Date</th>
 <th>Delete</th>
 <th>Edit</th>
@@ -30,7 +30,7 @@ include "includes/navigation.php";?>
 <td><img src = "images/<?=$post_Data['image']?>" width="100"></td>
 <td><?= $post_Data['content'] ?></td>
 <td></td>
-<td><?= $post_Data['comment_count'] ?></td>
+<td><?=$post_Data['count_comment']?></td>
 <td><?= $post_Data['created_at'] ?></td>
 <td><a href = "index.php?source=posts_table&&deletePost=<?= $post_Data['id'] ?>" onClick = "return confirmation();">Delete</a></td>
 <td><a href = "index.php?source=posts_table&&approve=<?= $post_Data['id'] ?>" onClick = "return confirm_approve();">Approve</a></td>
